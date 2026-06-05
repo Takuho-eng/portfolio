@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl'
 
 const links = [
   { key: 'instagram', icon: 'brand-instagram', href: 'https://instagram.com/' },
-  { key: 'portfolio', icon: 'world', href: 'https://your-portfolio.vercel.app' },
+  { key: 'portfolio', icon: 'world', href: 'https://portfolio-tau-amber-48.vercel.app' },
   { key: 'github', icon: 'brand-github', href: 'https://github.com/' },
   { key: 'email', icon: 'mail', href: 'mailto:t.nagoya11@gmail.com' }
 ] as const
@@ -20,7 +20,7 @@ export default function ContactSection() {
       'NICKNAME:Takuho Nagoya',
       'TEL;TYPE=CELL:+81-70-2002-6027',
       'EMAIL;TYPE=INTERNET:t.nagoya11@gmail.com',
-      'URL:https://your-portfolio.vercel.app',
+      'URL:https://portfolio-tau-amber-48.vercel.app',
       'NOTE:Engineer · Video Editor · Designer · Educator · F&B',
       'END:VCARD'
     ].join('\r\n')
