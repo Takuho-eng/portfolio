@@ -1,16 +1,26 @@
 'use client'
 import { useLocale, useTranslations } from 'next-intl'
 import { useRouter, usePathname } from 'next/navigation'
+import { useTransition } from 'react'
 
 export default function Nav() {
   const t = useTranslations('nav')
   const locale = useLocale()
   const router = useRouter()
   const pathname = usePathname()
+  const [isPending, startTransition] = useTransition()
 
   const switchLocale = (next: string) => {
-    const newPath = pathname.replace(`/${locale}`, `/${next}`) || `/${next}`
-    router.push(newPath)
+    const segments = pathname.split('/')
+    if (segments[1] === 'ja' || segments[1] === 'en') {
+      segments[1] = next
+    } else {
+      segments.splice(1, 0, next)
+    }
+    const newPath = segments.join('/') || `/${next}`
+    startTransition(() => {
+      router.push(newPath)
+    })
   }
 
   return (
@@ -25,7 +35,7 @@ export default function Nav() {
         <a href="#contact" className="text-white/50 text-sm hover:text-white transition-colors">
           {t('contact')}
         </a>
-        <div className="flex bg-white/8 rounded-full p-0.5 gap-0.5 border border-white/10">
+        <div className={`flex bg-white/8 rounded-full p-0.5 gap-0.5 border border-white/10 ${isPending ? 'opacity-60' : ''}`}>
           {(['ja', 'en'] as const).map((lang) => (
             <button
               key={lang}
