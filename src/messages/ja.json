@@ -1,0 +1,73 @@
+{
+  "nav": {
+    "logo": "TK.",
+    "works": "Works",
+    "contact": "Contact"
+  },
+  "hero": {
+    "eyebrow": "ポートフォリオ / デジタル名刺",
+    "name1": "TAKU",
+    "name2": "WORKS",
+    "sub": "技術と創造性をつなぐ\nEngineer · Creator · Educator",
+    "btnSave": "連絡先を保存",
+    "btnWorks": "Worksを見る",
+    "roles": ["エンジニア", "動画編集", "デザイン", "教育", "飲食"]
+  },
+  "stats": {
+    "title": "実績",
+    "items": [
+      { "years": "6Y", "label": "エンジニア" },
+      { "years": "4Y", "label": "動画編集" },
+      { "years": "4Y", "label": "教育者" },
+      { "years": "3Y", "label": "デザイン" },
+      { "years": "3Y", "label": "飲食" }
+    ]
+  },
+  "works": {
+    "title": "WORKS",
+    "subtitle": "カテゴリ別",
+    "items": [
+      {
+        "cat": "注目作品",
+        "title": "Fashion SNS App — AI × ファッション",
+        "meta": "React Native · Supabase · Gemini Vision",
+        "theme": "eng",
+        "featured": true
+      },
+      {
+        "cat": "動画",
+        "title": "編集実績まとめ",
+        "meta": "4年 · YouTube / SNS",
+        "theme": "video"
+      },
+      {
+        "cat": "デザイン",
+        "title": "ポスター・グラフィック集",
+        "meta": "3年 · Print & Digital",
+        "theme": "design"
+      },
+      {
+        "cat": "教育",
+        "title": "教育者としての実績",
+        "meta": "4年 · Teaching & Mentoring",
+        "theme": "edu"
+      },
+      {
+        "cat": "飲食",
+        "title": "飲食店での経験",
+        "meta": "3年 · Restaurant Operations",
+        "theme": "food"
+      }
+    ]
+  },
+  "contact": {
+    "title": "LET'S CONNECT",
+    "vcf": "連絡先を保存 (vCard)",
+    "links": {
+      "instagram": "Instagram",
+      "portfolio": "ポートフォリオ",
+      "github": "GitHub",
+      "email": "メール"
+    }
+  }
+}

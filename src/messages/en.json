@@ -1,0 +1,73 @@
+{
+  "nav": {
+    "logo": "TK.",
+    "works": "Works",
+    "contact": "Contact"
+  },
+  "hero": {
+    "eyebrow": "Portfolio / Digital Business Card",
+    "name1": "TAKU",
+    "name2": "WORKS",
+    "sub": "Bridging technology and creativity\nEngineer · Creator · Educator",
+    "btnSave": "Save Contact",
+    "btnWorks": "View Works",
+    "roles": ["Engineer", "Video Edit", "Design", "Education", "F&B"]
+  },
+  "stats": {
+    "title": "Stats",
+    "items": [
+      { "years": "6Y", "label": "Engineer" },
+      { "years": "4Y", "label": "Video Edit" },
+      { "years": "4Y", "label": "Educator" },
+      { "years": "3Y", "label": "Design" },
+      { "years": "3Y", "label": "F&B" }
+    ]
+  },
+  "works": {
+    "title": "WORKS",
+    "subtitle": "By category",
+    "items": [
+      {
+        "cat": "Featured",
+        "title": "Fashion SNS App — AI × Fashion",
+        "meta": "React Native · Supabase · Gemini Vision",
+        "theme": "eng",
+        "featured": true
+      },
+      {
+        "cat": "Video",
+        "title": "Video Editing Reel",
+        "meta": "4 years · YouTube / SNS",
+        "theme": "video"
+      },
+      {
+        "cat": "Design",
+        "title": "Poster & Graphic Design",
+        "meta": "3 years · Print & Digital",
+        "theme": "design"
+      },
+      {
+        "cat": "Education",
+        "title": "Teaching Experience",
+        "meta": "4 years · Teaching & Mentoring",
+        "theme": "edu"
+      },
+      {
+        "cat": "F&B",
+        "title": "F&B Experience",
+        "meta": "3 years · Restaurant Operations",
+        "theme": "food"
+      }
+    ]
+  },
+  "contact": {
+    "title": "LET'S CONNECT",
+    "vcf": "Save Contact (vCard)",
+    "links": {
+      "instagram": "Instagram",
+      "portfolio": "Portfolio",
+      "github": "GitHub",
+      "email": "Email"
+    }
+  }
+}
