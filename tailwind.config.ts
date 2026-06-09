@@ -9,7 +9,7 @@ const config: Config = {
         dm: ['var(--font-dm)']
       },
       colors: {
-        accent: '#c8ff00'
+        accent: '#8A8FAB'
       }
     }
   },

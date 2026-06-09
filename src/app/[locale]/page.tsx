@@ -9,7 +9,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   const { locale } = await params
   setRequestLocale(locale)
   return (
-    <main className="min-h-screen bg-[#0a0a0a]">
+    <main className="min-h-screen bg-[#F0EDE4]">
       <Nav />
       <HeroSection />
       <StatsSection />

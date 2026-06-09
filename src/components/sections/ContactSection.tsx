@@ -34,12 +34,12 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact" className="px-6 py-8 bg-[#050505] border-t border-white/8">
-      <h2 className="font-bebas text-3xl text-white tracking-wider mb-5">{t('title')}</h2>
+    <section id="contact" className="px-6 py-8 bg-[#E8E4DA] border-t border-[#2D2D2D]/10">
+      <h2 className="font-bebas text-3xl text-[#2D2D2D] tracking-wider mb-5">{t('title')}</h2>
 
       <button
         onClick={downloadVCard}
-        className="w-full flex items-center justify-center gap-2 bg-[#c8ff00] text-[#0a0a0a] text-sm font-medium py-3 rounded-md mb-4 hover:bg-[#d4ff33] transition-colors"
+        className="w-full flex items-center justify-center gap-2 bg-[#8A8FAB] text-white text-sm font-medium py-3 rounded-md mb-4 hover:bg-[#9AA0BC] transition-colors"
       >
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <rect x="2" y="4" width="20" height="16" rx="2"/><path d="M16 2v4M8 2v4M2 10h20M7 15h.01M12 15h.01M17 15h.01"/>
@@ -54,7 +54,7 @@ export default function ContactSection() {
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-white/5 border border-white/10 text-white/60 text-xs py-2.5 px-3 rounded-md hover:border-white/25 hover:text-white/80 transition-all"
+            className="flex items-center gap-2 bg-[#2D2D2D]/5 border border-[#2D2D2D]/12 text-[#2D2D2D]/65 text-xs py-2.5 px-3 rounded-md hover:border-[#2D2D2D]/30 hover:text-[#2D2D2D]/85 transition-all"
           >
             {t(`links.${key}`)}
           </a>
