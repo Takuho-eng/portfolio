@@ -1,4 +1,5 @@
 import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/navigation'
 
 const themeStyles: Record<string, string> = {
   eng: 'bg-[#DDE5F0]',
@@ -27,7 +28,7 @@ const themeLabels: Record<string, string> = {
 export default function WorksSection() {
   const t = useTranslations('works')
   const items = t.raw('items') as {
-    cat: string; title: string; meta: string; theme: string; featured?: boolean
+    cat: string; title: string; meta: string; theme: string; slug: string; featured?: boolean
   }[]
 
   return (
@@ -39,9 +40,10 @@ export default function WorksSection() {
 
       <div className="grid grid-cols-2 gap-3">
         {items.map((item, i) => (
-          <div
+          <Link
             key={i}
-            className={`rounded-xl overflow-hidden border border-[#2D2D2D]/8 cursor-pointer hover:border-[#2D2D2D]/25 transition-colors ${item.featured ? 'col-span-2' : ''}`}
+            href={`/works/${item.slug}`}
+            className={`rounded-xl overflow-hidden border border-[#2D2D2D]/8 hover:border-[#2D2D2D]/25 transition-colors ${item.featured ? 'col-span-2' : ''}`}
           >
             <div className={`${themeStyles[item.theme]} flex items-end p-4 ${item.featured ? 'h-24' : 'h-16'}`}>
               <span className={`font-bebas text-2xl leading-none ${themeColors[item.theme]}`}>
@@ -53,7 +55,7 @@ export default function WorksSection() {
               <div className="text-xs text-[#2D2D2D] font-medium leading-snug">{item.title}</div>
               <div className="text-[10px] text-[#2D2D2D]/45 mt-1">{item.meta}</div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>

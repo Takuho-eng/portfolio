@@ -28,37 +28,181 @@
     "subtitle": "By category",
     "items": [
       {
-        "cat": "Featured",
-        "title": "Fashion SNS App — AI × Fashion",
-        "meta": "React Native · Supabase · Gemini Vision",
+        "cat": "Engineer",
+        "title": "Business Systems × AI Development",
+        "meta": "GAS · Spreadsheet · AI / LLM",
         "theme": "eng",
+        "slug": "engineer",
         "featured": true
       },
       {
         "cat": "Video",
         "title": "Video Editing Reel",
         "meta": "4 years · YouTube / SNS",
-        "theme": "video"
+        "theme": "video",
+        "slug": "video"
       },
       {
         "cat": "Design",
         "title": "Poster & Graphic Design",
         "meta": "3 years · Print & Digital",
-        "theme": "design"
+        "theme": "design",
+        "slug": "design"
       },
       {
         "cat": "Education",
         "title": "Teaching Experience",
         "meta": "4 years · Teaching & Mentoring",
-        "theme": "edu"
+        "theme": "edu",
+        "slug": "education"
       },
       {
         "cat": "F&B",
         "title": "F&B Experience",
         "meta": "3 years · Restaurant Operations",
-        "theme": "food"
+        "theme": "food",
+        "slug": "food"
       }
     ]
+  },
+  "workPages": {
+    "backHome": "Back to top",
+    "highlightsTitle": "Highlights",
+    "skillsTitle": "Skills & Tools",
+    "comingSoon": "Coming soon",
+    "viewDetail": "View details",
+    "categories": {
+      "engineer": {
+        "title": "Engineer",
+        "subtitle": "6 years · Business systems / AI",
+        "intro": "I build business systems with GAS (Google Apps Script) and Google Workspace, and develop AI-powered products. My experience also extends to research-driven system development, including a joint research project with a university.",
+        "skills": ["Google Apps Script", "Spreadsheet / Google Form", "JavaScript", "AI / LLM", "HTML / CSS"],
+        "highlights": [
+          {
+            "title": "Attendance Management System",
+            "meta": "GAS · Spreadsheet · Google Form",
+            "desc": "A clock-in/clock-out system combining GAS, Spreadsheet, and Google Forms. Automates everything from time stamping to aggregation."
+          },
+          {
+            "title": "Consultation Records System",
+            "meta": "GAS · Spreadsheet",
+            "desc": "A system for managing consultation records of psychiatric patients. Streamlines storing, organizing, and referencing records."
+          },
+          {
+            "title": "Restaurant Reservation System",
+            "meta": "GAS",
+            "desc": "A lightweight reservation and booking management system for small restaurants."
+          },
+          {
+            "title": "Manual Assistant Chatbot",
+            "meta": "AI / LLM",
+            "desc": "An AI chatbot that answers questions based on operation manuals."
+          },
+          {
+            "title": "SP Record Database System",
+            "meta": "AI · Joint research with Kyushu University",
+            "desc": "An AI-powered database system for SP (standard play) records, developed as a joint research project with Kyushu University."
+          }
+        ]
+      },
+      "video": {
+        "title": "Video Editing",
+        "subtitle": "4 years · YouTube / SNS",
+        "intro": "Four years of video editing experience, mainly with DaVinci Resolve; also proficient with Premiere Pro. My work ranges from YouTube variety videos to university seminar introduction videos.",
+        "skills": ["DaVinci Resolve", "Premiere Pro", "YouTube", "Planning & Structure"],
+        "highlights": [
+          {
+            "title": "YouTube Variety Videos",
+            "meta": "YouTube",
+            "desc": "Produced variety videos for YouTube with editing focused on pacing and watchability."
+          },
+          {
+            "title": "University Seminar Introduction Video",
+            "meta": "University PR",
+            "desc": "Produced a university seminar introduction video, handling structure and editing to match the project's goals."
+          }
+        ]
+      },
+      "design": {
+        "title": "Design",
+        "subtitle": "3 years · Print / Digital / Web",
+        "intro": "A visual designer based in Victoria, Australia. I focus on poster design, digital illustrations, and branding visuals with a touch of Japanese minimalism and bold color. I also design and build websites.",
+        "skills": ["Illustrator", "Photoshop", "Procreate", "Lightroom", "HTML / CSS / JavaScript"],
+        "highlights": [
+          {
+            "title": "Leaflet — \"Seminar Exhibition at Teikyo University 2024\"",
+            "meta": "Illustrator · Photoshop · 2024",
+            "desc": "An exhibition leaflet for the Nagai seminar at Teikyo University. Designed to bring out the colors of four different exhibition themes while keeping the whole cohesive.",
+            "img": "/works/design/leaflet.jpg"
+          },
+          {
+            "title": "Illustration × Photography — \"Light of Longing\"",
+            "meta": "Photoshop · Lightroom · 2024",
+            "desc": "A 2A0-sized poster for the renewal of a museum café. Combined my own photo of the first sunrise of 2024 with a hand-drawn phoenix, leaving the bottom right empty to express an unbalanced sense of unreality.",
+            "img": "/works/design/longing.jpg"
+          },
+          {
+            "title": "Poster — \"Gyusuki Udon\"",
+            "meta": "Photoshop · Lightroom · 2024",
+            "desc": "A menu poster for Ginza Suehiro Cafeteria Services. Expressed sukiyaki as a winter delicacy with a snowy mountain backdrop while emphasizing a student-friendly price.",
+            "img": "/works/design/gyusuki.jpg"
+          },
+          {
+            "title": "Website — \"Nagai Seminar, Teikyo University\"",
+            "meta": "HTML · CSS · jQuery · 2023",
+            "desc": "The official website, commissioned by the Nagai seminar at Teikyo University. The motion-rich design was well received.",
+            "href": "https://teikyonagaizemi.com/"
+          },
+          {
+            "title": "Website — \"Hair Salon EMU\"",
+            "meta": "HTML · CSS · jQuery · 2025",
+            "desc": "The official website for a hair salon, designed around a chic Japanese style with watercolor-processed sunflower photos reflecting the owner's taste.",
+            "href": "https://www.hairsalonemu.com"
+          }
+        ]
+      },
+      "education": {
+        "title": "Education",
+        "subtitle": "4 years · Cram School Instructor",
+        "intro": "Four years of teaching experience as a cram school instructor, with a school teaching license. Under the school's internal certification system, I qualified to teach every subject from elementary through high school — except second-year high school physics — and taught a wide range of grades and subjects.",
+        "skills": ["All Subjects (Elementary–High School)", "Teaching License", "Material Creation", "Mentoring"],
+        "highlights": [
+          {
+            "title": "Cram School Instructor",
+            "meta": "4 years · Elementary to high school",
+            "desc": "Under a system requiring internal certification for each class, qualified to teach all subjects except second-year high school physics, teaching students from elementary through high school."
+          },
+          {
+            "title": "School Teaching License",
+            "meta": "Certified",
+            "desc": "Holds a school teaching license, grounding instruction in formal teaching expertise."
+          },
+          {
+            "title": "Original Teaching Materials",
+            "meta": "Math · English",
+            "desc": "Created original math and English teaching materials. Sample materials are available."
+          }
+        ]
+      },
+      "food": {
+        "title": "F&B",
+        "subtitle": "3+ years · Service / Management / Cooking",
+        "intro": "Hall service and management experience at a university cafeteria, plus cooking experience at a Japanese restaurant in Australia. I can handle everything from customer service to operations and cooking.",
+        "skills": ["Hall Service", "Management", "Menu Planning", "Cooking", "Sushi"],
+        "highlights": [
+          {
+            "title": "University Cafeteria — Hall Staff / Manager",
+            "meta": "3 years (2 as manager)",
+            "desc": "Beyond hall service, proposed new menu items roughly once a month and handled the related management and promotional work."
+          },
+          {
+            "title": "Japanese Restaurant Cook (Australia)",
+            "meta": "Cooking · Sushi",
+            "desc": "Skilled in standard restaurant cooking, and can also properly prepare sushi."
+          }
+        ]
+      }
+    }
   },
   "contact": {
     "title": "LET'S CONNECT",

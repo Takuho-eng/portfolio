@@ -28,37 +28,181 @@
     "subtitle": "カテゴリ別",
     "items": [
       {
-        "cat": "注目作品",
-        "title": "Fashion SNS App — AI × ファッション",
-        "meta": "React Native · Supabase · Gemini Vision",
+        "cat": "エンジニア",
+        "title": "業務システム × AI 開発",
+        "meta": "GAS · Spreadsheet · AI / LLM",
         "theme": "eng",
+        "slug": "engineer",
         "featured": true
       },
       {
         "cat": "動画",
         "title": "編集実績まとめ",
         "meta": "4年 · YouTube / SNS",
-        "theme": "video"
+        "theme": "video",
+        "slug": "video"
       },
       {
         "cat": "デザイン",
         "title": "ポスター・グラフィック集",
         "meta": "3年 · Print & Digital",
-        "theme": "design"
+        "theme": "design",
+        "slug": "design"
       },
       {
         "cat": "教育",
         "title": "教育者としての実績",
         "meta": "4年 · Teaching & Mentoring",
-        "theme": "edu"
+        "theme": "edu",
+        "slug": "education"
       },
       {
         "cat": "飲食",
         "title": "飲食店での経験",
         "meta": "3年 · Restaurant Operations",
-        "theme": "food"
+        "theme": "food",
+        "slug": "food"
       }
     ]
+  },
+  "workPages": {
+    "backHome": "トップへ戻る",
+    "highlightsTitle": "主な実績",
+    "skillsTitle": "スキル・ツール",
+    "comingSoon": "準備中",
+    "viewDetail": "詳細を見る",
+    "categories": {
+      "engineer": {
+        "title": "エンジニア",
+        "subtitle": "6年 · 業務システム / AI",
+        "intro": "GAS(Google Apps Script)とGoogleワークスペースを活用した業務システムの構築から、AIを活用したプロダクト開発まで幅広く手がけています。大学との共同研究など、研究領域でのシステム開発経験もあります。",
+        "skills": ["Google Apps Script", "Spreadsheet / Google Form", "JavaScript", "AI / LLM", "HTML / CSS"],
+        "highlights": [
+          {
+            "title": "出退勤管理システム",
+            "meta": "GAS · Spreadsheet · Google Form",
+            "desc": "GAS・スプレッドシート・Googleフォームを組み合わせた出退勤システム。打刻から集計までを自動化。"
+          },
+          {
+            "title": "相談記録管理システム",
+            "meta": "GAS · Spreadsheet",
+            "desc": "精神疾患患者の相談記録を管理するシステム。記録の蓄積・整理・参照を効率化。"
+          },
+          {
+            "title": "飲食店向け簡易予約システム",
+            "meta": "GAS",
+            "desc": "小規模飲食店向けの予約受付・管理システム。"
+          },
+          {
+            "title": "マニュアルアシスタント チャットBOT",
+            "meta": "AI / LLM",
+            "desc": "業務マニュアルをもとに質問へ回答するAIチャットボット。"
+          },
+          {
+            "title": "SPレコード DBシステム",
+            "meta": "AI · 九州大学との共同研究",
+            "desc": "AIを活用したSPレコードのデータベースシステム。九州大学との共同研究として開発。"
+          }
+        ]
+      },
+      "video": {
+        "title": "動画編集",
+        "subtitle": "4年 · YouTube / SNS",
+        "intro": "DaVinci Resolveをメインに4年間の動画編集経験。Premiere Proなども使用可能です。YouTubeのバラエティ動画から大学のゼミ紹介動画まで、幅広いジャンルの動画を制作してきました。",
+        "skills": ["DaVinci Resolve", "Premiere Pro", "YouTube", "企画・構成"],
+        "highlights": [
+          {
+            "title": "YouTube バラエティ動画",
+            "meta": "YouTube",
+            "desc": "テンポと見やすさを重視した編集で、YouTube向けのバラエティ動画を制作。"
+          },
+          {
+            "title": "大学ゼミ紹介動画",
+            "meta": "大学PR",
+            "desc": "大学のゼミ紹介動画を制作。企画意図に合わせた構成・編集を担当。"
+          }
+        ]
+      },
+      "design": {
+        "title": "デザイン",
+        "subtitle": "3年 · Print / Digital / Web",
+        "intro": "オーストラリア・ビクトリア州を拠点に活動するビジュアルデザイナー。ポスターデザイン、デジタルイラスト、ブランディングビジュアルを中心に、日本的なミニマリズムと大胆な色使いを持ち味としています。Webサイトのデザイン・実装も手がけます。",
+        "skills": ["Illustrator", "Photoshop", "Procreate", "Lightroom", "HTML / CSS / JavaScript"],
+        "highlights": [
+          {
+            "title": "リーフレット「帝京大学ゼミ展示会 2024」",
+            "meta": "Illustrator · Photoshop · 2024",
+            "desc": "帝京大学永井ゼミの展示会リーフレット。ジャンルの異なる4つの展示テーマそれぞれの色を引き出しながら、全体の統一感を保つことを意識して制作。",
+            "img": "/works/design/leaflet.jpg"
+          },
+          {
+            "title": "イラスト × 写真「Light of longing」",
+            "meta": "Photoshop · Lightroom · 2024",
+            "desc": "美術館カフェのリニューアルに向けた2A0サイズのポスター。自ら撮影した2024年の初日の出に不死鳥を描き加え、あえて右下に何も置かないことでアンバランスな非現実感を表現。",
+            "img": "/works/design/longing.jpg"
+          },
+          {
+            "title": "ポスター「牛すきうどん」",
+            "meta": "Photoshop · Lightroom · 2024",
+            "desc": "銀座スエヒロ食堂サービス向けのメニューポスター。冬の味覚すき焼きを雪山の背景で表現し、学生にも手の届く価格であることを訴求。",
+            "img": "/works/design/gyusuki.jpg"
+          },
+          {
+            "title": "Webサイト「帝京大学 永井ゼミ」",
+            "meta": "HTML · CSS · jQuery · 2023",
+            "desc": "帝京大学永井ゼミから正式に依頼を受けて制作した公式サイト。動きのあるデザインが評価された。",
+            "href": "https://teikyonagaizemi.com/"
+          },
+          {
+            "title": "Webサイト「Hair Salon EMU」",
+            "meta": "HTML · CSS · jQuery · 2025",
+            "desc": "ヘアサロンの公式サイト。シックな和風テイストと、オーナーの好きなひまわりを水彩風に加工した写真をモチーフにデザイン。",
+            "href": "https://www.hairsalonemu.com"
+          }
+        ]
+      },
+      "education": {
+        "title": "教育",
+        "subtitle": "4年 · 塾講師",
+        "intro": "塾講師として4年間の指導経験。学校教員免許も取得しています。社内の授業資格制度のもと、高校2年生の物理を除く小学校から高校までの全教科の授業資格を取得し、幅広い学年・教科を指導してきました。",
+        "skills": ["全教科指導(小〜高)", "教員免許", "教材作成", "メンタリング"],
+        "highlights": [
+          {
+            "title": "塾講師として4年間の指導",
+            "meta": "4年 · 小学生〜高校生",
+            "desc": "社内資格がなければ授業ができない制度のもと、高校2年生の物理を除く全教科の授業資格を取得。小学生から高校生まで幅広く指導。"
+          },
+          {
+            "title": "学校教員免許",
+            "meta": "取得済み",
+            "desc": "学校教員免許を取得済み。教育の専門知識に基づいた指導を行う。"
+          },
+          {
+            "title": "オリジナル教材の作成",
+            "meta": "数学 · 英語",
+            "desc": "数学・英語のオリジナル教材を作成。サンプル教材の公開も可能。"
+          }
+        ]
+      },
+      "food": {
+        "title": "飲食",
+        "subtitle": "3年+ · ホール / マネジメント / 調理",
+        "intro": "大学食堂でのホール・マネジメント経験と、オーストラリアの日本料理店での調理経験。接客から店舗運営、調理まで現場全般に対応できます。",
+        "skills": ["ホール業務", "マネジメント", "メニュー提案", "調理", "寿司"],
+        "highlights": [
+          {
+            "title": "大学食堂 ホールスタッフ / マネージャー",
+            "meta": "3年(うちマネージャー2年)",
+            "desc": "ホール業務に加え、月1回程度のメニュー提案や、それに伴うマネジメント・広告業務も担当。"
+          },
+          {
+            "title": "日本料理店 料理人(オーストラリア)",
+            "meta": "調理 · 寿司",
+            "desc": "外食系の基本的な調理に加え、寿司も本格的に握ることができる。"
+          }
+        ]
+      }
+    }
   },
   "contact": {
     "title": "LET'S CONNECT",

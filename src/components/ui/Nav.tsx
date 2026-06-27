@@ -29,10 +29,10 @@ export default function Nav() {
         {t('logo')}
       </span>
       <div className="flex items-center gap-4">
-        <a href="#works" className="text-[#2D2D2D]/55 text-sm hover:text-[#2D2D2D] transition-colors">
+        <a href={`/${locale}#works`} className="text-[#2D2D2D]/55 text-sm hover:text-[#2D2D2D] transition-colors">
           {t('works')}
         </a>
-        <a href="#contact" className="text-[#2D2D2D]/55 text-sm hover:text-[#2D2D2D] transition-colors">
+        <a href={`/${locale}#contact`} className="text-[#2D2D2D]/55 text-sm hover:text-[#2D2D2D] transition-colors">
           {t('contact')}
         </a>
         <div className={`flex bg-[#2D2D2D]/8 rounded-full p-0.5 gap-0.5 border border-[#2D2D2D]/12 ${isPending ? 'opacity-60' : ''}`}>
