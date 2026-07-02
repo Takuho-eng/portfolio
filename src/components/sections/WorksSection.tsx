@@ -1,28 +1,14 @@
 import { useTranslations } from 'next-intl'
+import { ArrowUpRight } from 'lucide-react'
 import { Link } from '@/i18n/navigation'
+import Reveal from '@/components/ui/Reveal'
 
-const themeStyles: Record<string, string> = {
-  eng: 'bg-[#DDE5F0]',
-  video: 'bg-[#EAE2F2]',
-  design: 'bg-[#DCF0E2]',
-  edu: 'bg-[#F0ECDC]',
-  food: 'bg-[#F0E0DE]'
-}
-
-const themeColors: Record<string, string> = {
-  eng: 'text-[#3A5A9A]',
-  video: 'text-[#6B5EA8]',
-  design: 'text-[#2D7A45]',
-  edu: 'text-[#7A6520]',
-  food: 'text-[#8A2D2D]'
-}
-
-const themeLabels: Record<string, string> = {
-  eng: 'ENGINEER',
-  video: 'VIDEO',
-  design: 'DESIGN',
-  edu: 'EDU',
-  food: 'F&B'
+const themeMeta: Record<string, { img: string; tint: string; label: string; text: string }> = {
+  eng: { img: '/img/card-eng.jpg', tint: '#1F3A6B', label: 'ENGINEER', text: 'text-[#3A5A9A]' },
+  video: { img: '/img/card-video.jpg', tint: '#3E2F63', label: 'VIDEO', text: 'text-[#6B5EA8]' },
+  design: { img: '/img/card-design.jpg', tint: '#194B2C', label: 'DESIGN', text: 'text-[#2D7A45]' },
+  edu: { img: '/img/card-edu.jpg', tint: '#5A4A14', label: 'EDU', text: 'text-[#7A6520]' },
+  food: { img: '/img/gelato.jpg', tint: '#6B1F1F', label: 'F&B', text: 'text-[#8A2D2D]' }
 }
 
 export default function WorksSection() {
@@ -32,31 +18,56 @@ export default function WorksSection() {
   }[]
 
   return (
-    <section id="works" className="px-6 py-8 border-t border-[#2D2D2D]/10">
-      <div className="flex justify-between items-baseline mb-5">
-        <h2 className="font-bebas text-3xl text-[#2D2D2D] tracking-wider">{t('title')}</h2>
-        <span className="text-xs text-[#2D2D2D]/50">{t('subtitle')}</span>
-      </div>
+    <section id="works" className="max-w-5xl mx-auto px-6 sm:px-10 py-16 scroll-mt-20">
+      <Reveal className="flex items-baseline justify-between border-b border-[#2D2D2D]/15 pb-4 mb-10">
+        <h2 className="font-display text-4xl sm:text-5xl text-[#2D2D2D] leading-none">Works</h2>
+        <span className="font-mincho text-[11px] tracking-[0.3em] text-[#2D2D2D]/50">{t('subtitle')}</span>
+      </Reveal>
 
-      <div className="grid grid-cols-2 gap-3">
-        {items.map((item, i) => (
-          <Link
-            key={i}
-            href={`/works/${item.slug}`}
-            className={`rounded-xl overflow-hidden border border-[#2D2D2D]/8 hover:border-[#2D2D2D]/25 transition-colors ${item.featured ? 'col-span-2' : ''}`}
-          >
-            <div className={`${themeStyles[item.theme]} flex items-end p-4 ${item.featured ? 'h-24' : 'h-16'}`}>
-              <span className={`font-bebas text-2xl leading-none ${themeColors[item.theme]}`}>
-                {themeLabels[item.theme]}
-              </span>
-            </div>
-            <div className="bg-[#2D2D2D]/5 p-3">
-              <div className="text-[10px] text-[#2D2D2D]/45 uppercase tracking-wider mb-1">{item.cat}</div>
-              <div className="text-xs text-[#2D2D2D] font-medium leading-snug">{item.title}</div>
-              <div className="text-[10px] text-[#2D2D2D]/45 mt-1">{item.meta}</div>
-            </div>
-          </Link>
-        ))}
+      <div className="flex flex-col divide-y divide-[#2D2D2D]/12">
+        {items.map((item, i) => {
+          const m = themeMeta[item.theme]
+          return (
+            <Reveal key={i} delay={(i % 2) * 120}>
+              <Link
+                href={`/works/${item.slug}`}
+                className="group grid sm:grid-cols-[1.1fr_1fr] gap-6 sm:gap-10 items-center py-8"
+              >
+                <div className="relative rounded-sm overflow-hidden h-44 sm:h-56">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={m.img}
+                    alt=""
+                    loading="lazy"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div
+                    className="absolute inset-0 mix-blend-multiply"
+                    style={{ backgroundColor: m.tint, opacity: 0.62 }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/35 to-transparent" />
+                  <span className="absolute bottom-4 left-5 font-display text-4xl sm:text-5xl leading-none tracking-wide text-white/95">
+                    {m.label}
+                  </span>
+                </div>
+
+                <div className="sm:pr-4">
+                  <div className="font-mincho text-[11px] tracking-[0.25em] text-[#2D2D2D]/45 uppercase mb-3">
+                    {item.cat}
+                  </div>
+                  <div className="font-mincho text-lg sm:text-xl text-[#2D2D2D] leading-snug">
+                    {item.title}
+                  </div>
+                  <div className="font-ui text-xs text-[#2D2D2D]/45 mt-2 tracking-wide">{item.meta}</div>
+                  <span className="inline-flex items-center gap-1.5 mt-5 font-ui text-[11px] tracking-[0.2em] uppercase text-[#2D2D2D]/70 transition-colors group-hover:text-[#8A8FAB]">
+                    View
+                    <ArrowUpRight size={13} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </span>
+                </div>
+              </Link>
+            </Reveal>
+          )
+        })}
       </div>
     </section>
   )

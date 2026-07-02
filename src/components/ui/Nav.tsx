@@ -11,6 +11,7 @@ export default function Nav() {
   const [isPending, startTransition] = useTransition()
 
   const switchLocale = (next: string) => {
+    if (next === locale) return
     const segments = pathname.split('/')
     if (segments[1] === 'ja' || segments[1] === 'en') {
       segments[1] = next
@@ -24,31 +25,50 @@ export default function Nav() {
   }
 
   return (
-    <nav className="flex justify-between items-center px-6 py-4 sticky top-0 z-50 bg-[#F0EDE4]/90 border-b border-[#2D2D2D]/10">
-      <span className="font-bebas text-2xl text-[#8A8FAB] tracking-wider">
-        {t('logo')}
-      </span>
-      <div className="flex items-center gap-4">
-        <a href={`/${locale}#works`} className="text-[#2D2D2D]/55 text-sm hover:text-[#2D2D2D] transition-colors">
-          {t('works')}
+    <nav className="sticky top-0 z-50 bg-[#F0EDE4]/85 backdrop-blur-md border-b border-[#2D2D2D]/12">
+      <div className="max-w-5xl mx-auto flex justify-between items-center px-6 sm:px-10 py-5">
+        <a
+          href={`/${locale}`}
+          className="flex items-center gap-2.5"
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/img/logo-ship.png" alt="" className="w-7 h-7 object-contain" />
+          <span className="font-display text-lg sm:text-xl tracking-[0.25em] text-[#2D2D2D] uppercase">
+            Takuho&nbsp;Nagoya
+          </span>
         </a>
-        <a href={`/${locale}#contact`} className="text-[#2D2D2D]/55 text-sm hover:text-[#2D2D2D] transition-colors">
-          {t('contact')}
-        </a>
-        <div className={`flex bg-[#2D2D2D]/8 rounded-full p-0.5 gap-0.5 border border-[#2D2D2D]/12 ${isPending ? 'opacity-60' : ''}`}>
-          {(['ja', 'en'] as const).map((lang) => (
-            <button
-              key={lang}
-              onClick={() => switchLocale(lang)}
-              className={`text-xs px-3 py-1.5 rounded-full font-medium transition-all ${
-                locale === lang
-                  ? 'bg-[#8A8FAB] text-white'
-                  : 'text-[#2D2D2D]/55 hover:text-[#2D2D2D]/80'
-              }`}
-            >
-              {lang.toUpperCase()}
-            </button>
-          ))}
+
+        <div className="flex items-center gap-6 sm:gap-9">
+          <a
+            href={`/${locale}#works`}
+            className="hidden sm:inline font-ui text-[11px] tracking-[0.28em] uppercase text-[#2D2D2D]/55 hover:text-[#2D2D2D] transition-colors"
+          >
+            {t('works')}
+          </a>
+          <a
+            href={`/${locale}#contact`}
+            className="hidden sm:inline font-ui text-[11px] tracking-[0.28em] uppercase text-[#2D2D2D]/55 hover:text-[#2D2D2D] transition-colors"
+          >
+            {t('contact')}
+          </a>
+
+          <div className={`flex items-center gap-2 font-ui text-[11px] tracking-[0.15em] ${isPending ? 'opacity-50' : ''}`}>
+            {(['ja', 'en'] as const).map((lang, i) => (
+              <span key={lang} className="flex items-center gap-2">
+                {i > 0 && <span className="text-[#2D2D2D]/25">/</span>}
+                <button
+                  onClick={() => switchLocale(lang)}
+                  className={`uppercase transition-colors ${
+                    locale === lang
+                      ? 'text-[#8A8FAB]'
+                      : 'text-[#2D2D2D]/45 hover:text-[#2D2D2D]/80'
+                  }`}
+                >
+                  {lang}
+                </button>
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </nav>

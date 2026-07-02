@@ -1,11 +1,13 @@
 'use client'
 import { useTranslations } from 'next-intl'
+import { ArrowUpRight, ArrowDownRight } from 'lucide-react'
+import Reveal from '@/components/ui/Reveal'
 
 const links = [
-  { key: 'instagram', icon: 'brand-instagram', href: 'https://instagram.com/' },
-  { key: 'portfolio', icon: 'world', href: 'https://portfolio-tau-amber-48.vercel.app' },
-  { key: 'github', icon: 'brand-github', href: 'https://github.com/' },
-  { key: 'email', icon: 'mail', href: 'mailto:t.nagoya11@gmail.com' }
+  { key: 'instagram', href: 'https://instagram.com/' },
+  { key: 'portfolio', href: 'https://portfolio-tau-amber-48.vercel.app' },
+  { key: 'github', href: 'https://github.com/' },
+  { key: 'email', href: 'mailto:t.nagoya11@gmail.com' }
 ] as const
 
 export default function ContactSection() {
@@ -34,31 +36,53 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact" className="px-6 py-8 bg-[#E8E4DA] border-t border-[#2D2D2D]/10">
-      <h2 className="font-bebas text-3xl text-[#2D2D2D] tracking-wider mb-5">{t('title')}</h2>
+    <section id="contact" className="bg-[#E8E4DA] border-t border-[#2D2D2D]/12 scroll-mt-20">
+      <div className="max-w-5xl mx-auto px-6 sm:px-10 py-16">
+        <Reveal className="flex items-baseline justify-between border-b border-[#2D2D2D]/15 pb-4 mb-10">
+          <h2 className="font-display text-4xl sm:text-5xl text-[#2D2D2D] leading-none">Let&rsquo;s Connect</h2>
+          <span className="font-mincho text-[11px] tracking-[0.3em] text-[#2D2D2D]/50">連絡先</span>
+        </Reveal>
 
-      <button
-        onClick={downloadVCard}
-        className="w-full flex items-center justify-center gap-2 bg-[#8A8FAB] text-white text-sm font-medium py-3 rounded-md mb-4 hover:bg-[#9AA0BC] transition-colors"
-      >
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="2" y="4" width="20" height="16" rx="2"/><path d="M16 2v4M8 2v4M2 10h20M7 15h.01M12 15h.01M17 15h.01"/>
-        </svg>
-        {t('vcf')}
-      </button>
-
-      <div className="grid grid-cols-2 gap-3">
-        {links.map(({ key, href }) => (
-          <a
-            key={key}
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-[#2D2D2D]/5 border border-[#2D2D2D]/12 text-[#2D2D2D]/65 text-xs py-2.5 px-3 rounded-md hover:border-[#2D2D2D]/30 hover:text-[#2D2D2D]/85 transition-all"
+        <Reveal delay={80}>
+          <button
+            onClick={downloadVCard}
+            className="group inline-flex items-center gap-3 font-ui text-sm tracking-[0.1em] text-[#2D2D2D] border-b border-[#8A8FAB] pb-1.5 mb-12"
           >
-            {t(`links.${key}`)}
-          </a>
-        ))}
+            <span>{t('vcf')}</span>
+            <ArrowDownRight size={16} className="text-[#8A8FAB] transition-transform group-hover:translate-x-0.5 group-hover:translate-y-0.5" />
+          </button>
+        </Reveal>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 border-t border-[#2D2D2D]/12">
+          {links.map(({ key, href }, i) => (
+            <Reveal
+              key={key}
+              delay={i * 80}
+              className="group border-b border-[#2D2D2D]/12 sm:odd:border-r sm:odd:pr-8 sm:[&:nth-child(even)]:pl-8"
+            >
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between py-5"
+              >
+                <span className="font-mincho text-base text-[#2D2D2D]/80 group-hover:text-[#2D2D2D] transition-colors">
+                  {t(`links.${key}`)}
+                </span>
+                <ArrowUpRight
+                  size={16}
+                  className="text-[#2D2D2D]/40 group-hover:text-[#8A8FAB] transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
+              </a>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal>
+          <p className="font-ui text-[11px] tracking-[0.2em] uppercase text-[#2D2D2D]/40 mt-14">
+            © {new Date().getFullYear()} Takuho Nagoya
+          </p>
+        </Reveal>
       </div>
     </section>
   )

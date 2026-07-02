@@ -148,6 +148,18 @@
             "img": "/works/design/gyusuki.jpg"
           },
           {
+            "title": "Poster — \"Hachioji Mulberry Gelato\"",
+            "meta": "Photoshop · Illustrator · 2024",
+            "desc": "A poster for a collaboration product with Michi-no-Eki Hachioji Takiyama. Botanical ornamentation conveys the texture of local Hachioji mulberries and a sense of place.",
+            "img": "/img/gelato.jpg"
+          },
+          {
+            "title": "Recipe Card",
+            "meta": "Illustrator · 2024",
+            "desc": "A cooking recipe card, balancing an approachable, friendly feel with clear, readable information design.",
+            "img": "/img/recipe.jpg"
+          },
+          {
             "title": "Website — \"Nagai Seminar, Teikyo University\"",
             "meta": "HTML · CSS · jQuery · 2023",
             "desc": "The official website, commissioned by the Nagai seminar at Teikyo University. The motion-rich design was well received.",
@@ -203,6 +215,17 @@
         ]
       }
     }
+  },
+  "about": {
+    "label": "ABOUT",
+    "title": "Takuho Nagoya",
+    "role": "Engineer · Creator · Educator",
+    "body": "Born in Kanagawa, Japan. I work across engineering, video editing, design, education, and hospitality — bridging technology and creativity across disciplines. Now based in Victoria, Australia, I document everyday scenes through photography and design.",
+    "caption": "Based in Victoria, Australia"
+  },
+  "quote": {
+    "text": "Crossing the boundaries of disciplines, bridging technology and creativity.",
+    "sub": "Bridging technology and creativity."
   },
   "contact": {
     "title": "LET'S CONNECT",

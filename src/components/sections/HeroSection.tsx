@@ -1,56 +1,100 @@
 'use client'
 import { useTranslations } from 'next-intl'
+import { ArrowRight, ArrowDownRight } from 'lucide-react'
+import Reveal from '@/components/ui/Reveal'
 
 export default function HeroSection() {
   const t = useTranslations('hero')
   const roles = t.raw('roles') as string[]
 
+  const downloadVCard = () => {
+    const vcf = [
+      'BEGIN:VCARD',
+      'VERSION:3.0',
+      'N:名古屋;拓帆;;;',
+      'FN:名古屋拓帆',
+      'NICKNAME:Takuho Nagoya',
+      'TEL;TYPE=CELL:+81-70-2002-6027',
+      'EMAIL;TYPE=INTERNET:t.nagoya11@gmail.com',
+      'URL:https://portfolio-tau-amber-48.vercel.app',
+      'NOTE:Engineer · Video Editor · Designer · Educator · F&B',
+      'END:VCARD'
+    ].join('\r\n')
+    const blob = new Blob([vcf], { type: 'text/vcard;charset=utf-8' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = 'takuho_nagoya.vcf'
+    a.click()
+    URL.revokeObjectURL(url)
+  }
+
   return (
-    <section className="px-6 pt-12 pb-10 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-5"
-        style={{ backgroundImage: 'repeating-linear-gradient(0deg,transparent,transparent 2px,#2D2D2D 2px,#2D2D2D 4px)', backgroundSize: '100% 4px' }}
+    <section className="relative min-h-[92vh] flex items-end overflow-hidden">
+      {/* full-bleed hero photograph */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/img/hero.jpg"
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover object-[center_30%]"
       />
-      <div className="absolute right-0 top-0 w-48 h-48 rounded-full border border-[#2D2D2D]/8" />
-      <div className="absolute right-8 top-8 w-24 h-24 rounded-full border border-[#8A8FAB]/15" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a20]/85 via-[#1a1a20]/25 to-[#1a1a20]/40" />
 
-      <p className="text-xs tracking-[0.15em] text-[#2D2D2D]/50 uppercase mb-4">
-        {t('eyebrow')}
-      </p>
+      {/* vertical scroll cue */}
+      <span className="hidden sm:flex flex-col items-center gap-2 absolute right-8 top-28 text-white/70">
+        <span className="font-ui text-[10px] tracking-[0.3em] uppercase [writing-mode:vertical-rl]">Scroll</span>
+        <span className="w-px h-14 bg-white/40" />
+      </span>
 
-      <h1 className="font-bebas text-[80px] sm:text-[100px] leading-[0.88] text-[#2D2D2D] mb-3">
-        {t('name1')}<br />
-        <span className="text-[#8A8FAB]">{t('name2')}</span>
-      </h1>
+      <div className="relative max-w-5xl mx-auto w-full px-6 sm:px-10 pb-16 sm:pb-20">
+        <Reveal delay={0}>
+          <p className="font-ui text-[11px] tracking-[0.35em] uppercase text-white/70 mb-6">
+            {t('eyebrow')}
+          </p>
+        </Reveal>
 
-      <p className="text-sm text-[#2D2D2D]/60 font-light leading-relaxed mb-7 max-w-xs whitespace-pre-line">
-        {t('sub')}
-      </p>
+        <Reveal delay={100}>
+          <h1 className="font-display text-[72px] sm:text-[132px] leading-[0.86] text-white font-semibold drop-shadow-sm">
+            {t('name1')}
+            <br />
+            <span className="text-[#C7CADF]">{t('name2')}</span>
+          </h1>
+        </Reveal>
 
-      <div className="flex flex-wrap gap-2 mb-8">
-        {roles.map((role, i) => (
-          <span
-            key={i}
-            className={`text-xs px-3 py-1.5 rounded-full border ${
-              i === 0
-                ? 'bg-[#8A8FAB] text-white border-[#8A8FAB] font-medium'
-                : 'border-[#2D2D2D]/18 text-[#2D2D2D]/65'
-            }`}
+        <Reveal delay={260}>
+          <p className="font-mincho text-[15px] sm:text-base text-white/80 leading-loose mt-7 max-w-md whitespace-pre-line">
+            {t('sub')}
+          </p>
+        </Reveal>
+
+        {/* roles as an editorial hairline-separated row */}
+        <Reveal delay={360}>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-7 font-ui text-xs tracking-[0.15em] text-white/70">
+            {roles.map((role, i) => (
+              <span key={i} className="flex items-center gap-x-4">
+                {i > 0 && <span className="w-4 h-px bg-white/40" />}
+                <span className={i === 0 ? 'text-[#C7CADF]' : ''}>{role}</span>
+              </span>
+            ))}
+          </div>
+        </Reveal>
+
+        <Reveal delay={460} className="flex flex-col sm:flex-row gap-4 sm:gap-8 mt-11">
+          <button
+            onClick={downloadVCard}
+            className="group inline-flex items-center gap-3 font-ui text-sm tracking-[0.1em] text-white border-b border-[#C7CADF] pb-1.5 w-fit"
           >
-            {role}
-          </span>
-        ))}
-      </div>
-
-      <div className="flex gap-3">
-        <button className="flex-1 flex items-center justify-center gap-2 bg-[#8A8FAB] text-white text-sm font-medium py-3 px-5 rounded-md">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <rect x="2" y="4" width="20" height="16" rx="2"/><path d="M16 2v4M8 2v4M2 10h20M7 15h.01M12 15h.01M17 15h.01"/>
-          </svg>
-          {t('btnSave')}
-        </button>
-        <a href="#works" className="flex-1 text-center text-sm text-[#2D2D2D]/65 py-3 px-5 border border-[#2D2D2D]/20 rounded-md hover:border-[#2D2D2D]/40 transition-colors">
-          {t('btnWorks')}
-        </a>
+            <span>{t('btnSave')}</span>
+            <ArrowDownRight size={16} className="text-[#C7CADF] transition-transform group-hover:translate-x-0.5 group-hover:translate-y-0.5" />
+          </button>
+          <a
+            href="#works"
+            className="group inline-flex items-center gap-3 font-ui text-sm tracking-[0.1em] text-white/75 border-b border-white/30 pb-1.5 w-fit hover:text-white transition-colors"
+          >
+            <span>{t('btnWorks')}</span>
+            <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+          </a>
+        </Reveal>
       </div>
     </section>
   )

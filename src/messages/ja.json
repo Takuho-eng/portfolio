@@ -148,6 +148,18 @@
             "img": "/works/design/gyusuki.jpg"
           },
           {
+            "title": "ポスター「八王子産マルベリージェラート」",
+            "meta": "Photoshop · Illustrator · 2024",
+            "desc": "道の駅八王子滝山とのコラボ商品ポスター。ボタニカルな装飾で八王子産マルベリーの素材感と地域性を表現。",
+            "img": "/img/gelato.jpg"
+          },
+          {
+            "title": "レシピカード",
+            "meta": "Illustrator · 2024",
+            "desc": "料理のレシピカード。手に取りやすい親しみやすさと情報の見やすさを両立させた紙面設計。",
+            "img": "/img/recipe.jpg"
+          },
+          {
             "title": "Webサイト「帝京大学 永井ゼミ」",
             "meta": "HTML · CSS · jQuery · 2023",
             "desc": "帝京大学永井ゼミから正式に依頼を受けて制作した公式サイト。動きのあるデザインが評価された。",
@@ -203,6 +215,17 @@
         ]
       }
     }
+  },
+  "about": {
+    "label": "ABOUT",
+    "title": "名古屋 拓帆",
+    "role": "Engineer · Creator · Educator",
+    "body": "神奈川県生まれ。エンジニア・動画編集・デザイン・教育・飲食と、領域を横断しながら「技術」と「創造性」をつなぐことをテーマに活動しています。現在はオーストラリア・ビクトリア州を拠点に、写真やデザインを通して日々の風景を記録しています。",
+    "caption": "Based in Victoria, Australia"
+  },
+  "quote": {
+    "text": "領域の境界を越えて、技術と創造性をつなぐ。",
+    "sub": "Bridging technology and creativity."
   },
   "contact": {
     "title": "LET'S CONNECT",
